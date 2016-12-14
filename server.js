@@ -6,17 +6,17 @@
 // Search for an object that exists        |  40   |     0      //
 // Search for an object that doesn't exist |  50   |     0      //
 // Remove an object                        |  25   |     0      //
-// Find the length                         |   0   | 3,000      //
+// Find the length                         |   0   | CRASH      //
 //////////////////////////////////////////////////////////////////
 // node --max_old_space_size=4096 server.js
 // Action                                  | Array | Dictionary //
-// Add 10,000,000 objects                  | 750   | 3,000      //
-// Search for an object that exists        |  40   |     0      //
-// Search for an object that doesn't exist |  50   |     0      //
-// Remove an object                        |  25   |     0      //
-// Find the length                         |   0   | 3,000      //
+// Add 10,000,000 objects                  | 1,200 |   730      //
+// Search for an object that exists        |    40 |     0      //
+// Search for an object that doesn't exist |    50 |     0      //
+// Remove an object                        |    25 |     0      //
+// Find the length                         |     0 | 1,300      //
 //////////////////////////////////////////////////////////////////
-
+// node --max_old_space_size=8192 server.js
 var arr = AddObjectsToArray();
 SearchForExistingObjectInArray(arr);
 SearchForNonExistingObjectInArray(arr);
