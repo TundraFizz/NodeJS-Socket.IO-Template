@@ -16,5 +16,9 @@ socket.on("message_s2c", function(msg){
 });
 
 socket.on("hi", function(msg){
-  $("#messages").append($("<li>").text("someone else joined"));
+  $("#messages").append($("<li>").text(msg));
+});
+
+socket.on("custom", function(msg){
+  $("#messages").append($("<li>").text(msg));
 });
